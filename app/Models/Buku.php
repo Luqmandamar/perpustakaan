@@ -14,8 +14,11 @@ class Buku extends Model
     
      protected $primaryKey = 'id';
      
-     protected $guard = 'id';
+     protected $guarded = ['id'];
      
+     public function kategori(){
+        return $this->belongsTo(Kategori::class, 'id_kategori');
+     }
      
  }
 
